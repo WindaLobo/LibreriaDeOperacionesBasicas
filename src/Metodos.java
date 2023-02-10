@@ -21,11 +21,32 @@ public class Metodos {
     private static Float total = null;
 
     /**
+     * En el metodo realizarOperacion  no recibe nada y no devuelve nada.
+     * Istacion el objeto Métodos, solicito que introduzca qué operación quiere realizar.
+     * Luego pido a y b, realizó un try catch para tener el control de los errores.
+     */
+    public static void realizarOperacionBasicas() {
+
+        try {
+            String operacion = LibreriaEntradSalida.entradaString("Que operacion quieres hacer " + "( \"+\" = Suma , \"-\" = Resta , \"*\" " + "= Multiplicacion , \"/\" = Division");
+            validarOperacion(operacion);
+            float a = LibreriaEntradSalida.recibefloat("Introduce un numero");
+            float b = LibreriaEntradSalida.recibefloat("Introduce un numero");
+            float resultado = operacionesBasicas(a, b, operacion);
+            LibreriaEntradSalida.salida("El resulta es " + resultado, LibreriaEntradSalida.SALIDA_CONSOLA);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+
+    /**
      * Creo un método privado de operacionesBasicas que recibe tres parametros, float numero1, float numero2, String operacion
+     *
      * @param operacion tendra varias opciones, sumar,restar,multiplicar o dividir
      * @param operacion de la division realizo un throw  Exception para capturar el error de la division entre 0.
-     * @throws Exception
      * @return un total.
+     * @throws Exception
      */
 
     private static float operacionesBasicas(float numero1, float numero2, String operacion) throws Exception {
@@ -53,30 +74,9 @@ public class Metodos {
     }
 
     /**
-     * En el metodo realizarOperacion  no recibe nada y no devuelve nada.
-     * Istacion el objeto Métodos, solicito que introduzca qué operación quiere realizar.
-     * Luego pido a y b, realizó un try catch para tener el control de los errores.
-     */
-    public static void realizarOperacionBasicas() {
-        Metodos obx = new Metodos();
-        try {
-            String operacion = LibreriaEntradSalida.entradaString("Que operacion quieres hacer " + "( \"+\" = Suma , \"-\" = Resta , \"*\" " + "= Multiplicacion , \"/\" = Division");
-            validarOperacion(operacion);
-            float a = LibreriaEntradSalida.recibefloat("Introduce un numero");
-            float b = LibreriaEntradSalida.recibefloat("Introduce un numero");
-            float resultado = obx.operacionesBasicas(a, b, operacion);
-            LibreriaEntradSalida.salida("El resulta es " + resultado, LibreriaEntradSalida.SALIDA_CONSOLA);
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-        }
-    }
-
-    /**
-     *
      * @param operacion
      * @throws Exception
      */
-
     private static void validarOperacion(String operacion) throws Exception {
         if (!operacion.equals("+") && !operacion.equals("-") && !operacion.equals("*") && !operacion.equals("/")) {
             throw new Exception("La operacion inválida");
