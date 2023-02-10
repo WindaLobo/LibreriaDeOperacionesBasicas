@@ -26,7 +26,7 @@ public void realizarOperacionBasicas(){
         float a=LibreriaEntradSalida.recibefloat("Introduce un numero");
         float b=LibreriaEntradSalida.recibefloat("Introduce un numero");
 
-        float resultado=obx.operacionesBasicas(a,b,operacion);
+        float resultado=operacionesBasicas(a,b,operacion);
         LibreriaEntradSalida.salida("El resulta es "+resultado,LibreriaEntradSalida.SALIDA_CONSOLA);
         }catch(Exception ex){
         System.out.println(ex.getMessage()); 
