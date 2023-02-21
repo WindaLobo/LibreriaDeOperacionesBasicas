@@ -28,12 +28,12 @@ public class Metodos {
     public static void realizarOperacionBasicas() {
 
         try {
-            String operacion = LibreriaEntradSalida.entradaString("Que operacion quieres hacer " + "( \"+\" = Suma , \"-\" = Resta , \"*\" " + "= Multiplicacion , \"/\" = Division");
+            String operacion = LibreriaEntradSalida.entradaString("Que operacion quieres hacer " + "( \"+\" = Suma , \"-\" = Resta , \"*\" " + "= Multiplicacion , \"/\" = Division",LibreriaEntradSalida.CONSOLA);
             validarOperacion(operacion);
-            float a = LibreriaEntradSalida.recibefloat("Introduce un numero");
-            float b = LibreriaEntradSalida.recibefloat("Introduce un numero");
+            float a = LibreriaEntradSalida.recibefloat("Introduce un numero",LibreriaEntradSalida.CONSOLA);
+            float b = LibreriaEntradSalida.recibefloat("Introduce un numero",LibreriaEntradSalida.CONSOLA);
             float resultado = operacionesBasicas(a, b, operacion);
-            LibreriaEntradSalida.salida("El resulta es " + resultado, LibreriaEntradSalida.SALIDA_CONSOLA);
+            LibreriaEntradSalida.salida("El resulta es " + resultado, LibreriaEntradSalida.CONSOLA);
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
