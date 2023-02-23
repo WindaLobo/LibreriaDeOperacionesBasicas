@@ -49,7 +49,7 @@ public class Metodos {
      * @throws Exception
      */
 
-    private static Float operacionesBasicas(float numero1, float numero2, String operacion) throws Exception {
+    private static float operacionesBasicas(float numero1, float numero2, String operacion) throws Exception {
 
         switch (operacion) {
             case Suma:
